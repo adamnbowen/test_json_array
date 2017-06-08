@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :test_json_array, TestJsonArray.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("DATABASE_USERNAME"),
+  password: System.get_env("DATABASE_PASSWORD"),
   database: "test_json_array_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

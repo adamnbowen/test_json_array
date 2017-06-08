@@ -20,7 +20,8 @@ defmodule TestJsonArray.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", TestJsonArray do
-  #   pipe_through :api
-  # end
+  scope "/api", TestJsonArray do
+    pipe_through :api
+    post "/", PageController, :create
+  end
 end
